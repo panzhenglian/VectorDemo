@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="24dp"
+    android:viewportHeight="24"
+    android:viewportWidth="200">
+    <path
+        android:name="search"
+        android:pathData="M191,17 a9,9 0 1,1 1,-1 l7,7"
+        android:strokeAlpha="0.8"
+        android:strokeColor="#ffffff"
+        android:strokeLineCap="round"
+        android:strokeWidth="2" />
+
+    <path
+        android:name="bar"
+        android:pathData="M0,23 h199"
+        android:strokeAlpha="0.8"
+        android:strokeColor="#ffffff"
+        android:strokeLineCap="square"
+        android:strokeWidth="2" />
+
+</vector>

@@ -1,0 +1,19 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/svg_flash_play">
+
+    <target
+        android:name="p1"
+        android:animation="@animator/anim_p1"/>
+    <target
+        android:name="p2"
+        android:animation="@animator/anim_p2"/>
+    <target
+        android:name="p3"
+        android:animation="@animator/anim_p3"/>
+    <target
+        android:name="p4"
+        android:animation="@animator/anim_p4"/>
+
+
+</animated-vector>
