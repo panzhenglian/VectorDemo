@@ -5,6 +5,8 @@
     <target
         android:name="v"
         android:animation="@animator/anim_word_del2add"/>
-
+    <target
+        android:name="all"
+        android:animation="@animator/anim_rotation"/>
 
 </animated-vector>
