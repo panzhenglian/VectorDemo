@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     EditText mText;
     private AnimatedVectorDrawableCompat search2Bar;
     private AnimatedVectorDrawableCompat bar2Search;
+    private AnimatedVectorDrawableCompat wordAdd2Del;
+    private AnimatedVectorDrawableCompat wordDel2Add;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,21 +41,26 @@ public class MainActivity extends AppCompatActivity {
         if (drawable instanceof Animatable) {
             ((Animatable) drawable).start();
         }
-        Drawable drawable2 = mImageView2.getDrawable();
-        if (drawable2 instanceof Animatable) {
-            ((Animatable) drawable2).start();
-        }
 
         search2Bar = AnimatedVectorDrawableCompat.create(this, R.drawable.animation_search2bar);
         bar2Search = AnimatedVectorDrawableCompat.create(this, R.drawable.animation_bar2search);
+
+
+        wordAdd2Del = AnimatedVectorDrawableCompat.create(this, R.drawable.animation_word_add2del);
+        wordDel2Add = AnimatedVectorDrawableCompat.create(this, R.drawable.animation_word_del2add);
 
         //默认显示搜索按钮
         mSearch.setImageDrawable(bar2Search);
         bar2Search.start();
         mText.setVisibility(View.GONE);
+
+        //默认显示添加
+        mImageView2.setImageDrawable(wordDel2Add);
+        wordDel2Add.start();
+
     }
 
-    @OnClick({R.id.search, R.id.root_view})
+    @OnClick({R.id.search, R.id.root_view , R.id.image_view2})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.search:
@@ -73,6 +80,15 @@ public class MainActivity extends AppCompatActivity {
                 mText.clearFocus();
                 mText.setVisibility(View.GONE);
                 hideSoftKeyboard();
+                break;
+            case R.id.image_view2:
+                if(wordAdd2Del.equals(mImageView2.getDrawable())){
+                    mImageView2.setImageDrawable(wordDel2Add);
+                    wordDel2Add.start();
+                }else {
+                    mImageView2.setImageDrawable(wordAdd2Del);
+                    wordAdd2Del.start();
+                }
                 break;
         }
     }

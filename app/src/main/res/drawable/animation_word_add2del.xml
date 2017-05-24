@@ -1,0 +1,10 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/svg_word_add">
+
+    <target
+        android:name="v"
+        android:animation="@animator/anim_word_add2del"/>
+
+
+</animated-vector>
