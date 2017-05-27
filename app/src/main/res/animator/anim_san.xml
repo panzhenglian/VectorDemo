@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+        android:duration="1500"
+        android:propertyName="trimPathEnd"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"
+        android:valueFrom="0.5"
+        android:valueTo="1" />
+    <objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+        android:duration="1500"
+        android:propertyName="trimPathStart"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"
+        android:valueFrom="0.5"
+        android:valueTo="0" />
+    <objectAnimator
+        android:duration="1500"
+        android:propertyName="strokeColor"
+        android:repeatCount="infinite"
+        android:repeatMode="restart"
+        android:valueFrom="#ffffff"
+        android:valueTo="#ff0000" />
+</set>
+
+    <!--android:interpolator="@android:interpolator/anticipate_overshoot"-->

@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView mSearch;
     @BindView(R.id.text)
     EditText mText;
+    @BindView(R.id.imageViewSan)
+    ImageView mImageViewSan;
     private AnimatedVectorDrawableCompat search2Bar;
     private AnimatedVectorDrawableCompat bar2Search;
     private AnimatedVectorDrawableCompat wordAdd2Del;
@@ -42,12 +44,20 @@ public class MainActivity extends AppCompatActivity {
             ((Animatable) drawable).start();
         }
 
+        Drawable drawableSan = mImageViewSan.getDrawable();
+        if (drawableSan instanceof Animatable) {
+            ((Animatable) drawableSan).start();
+        }
+
         search2Bar = AnimatedVectorDrawableCompat.create(this, R.drawable.animation_search2bar);
         bar2Search = AnimatedVectorDrawableCompat.create(this, R.drawable.animation_bar2search);
 
 
         wordAdd2Del = AnimatedVectorDrawableCompat.create(this, R.drawable.animation_word_add2del);
         wordDel2Add = AnimatedVectorDrawableCompat.create(this, R.drawable.animation_word_del2add);
+
+
+
 
         //默认显示搜索按钮
         mSearch.setImageDrawable(bar2Search);
@@ -60,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.search, R.id.root_view , R.id.image_view2})
+    @OnClick({R.id.search, R.id.root_view, R.id.image_view2})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.search:
@@ -82,10 +92,10 @@ public class MainActivity extends AppCompatActivity {
                 hideSoftKeyboard();
                 break;
             case R.id.image_view2:
-                if(wordAdd2Del.equals(mImageView2.getDrawable())){
+                if (wordAdd2Del.equals(mImageView2.getDrawable())) {
                     mImageView2.setImageDrawable(wordDel2Add);
                     wordDel2Add.start();
-                }else {
+                } else {
                     mImageView2.setImageDrawable(wordAdd2Del);
                     wordAdd2Del.start();
                 }
