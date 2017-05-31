@@ -19,9 +19,9 @@
         android:duration="1500"
         android:propertyName="strokeColor"
         android:repeatCount="infinite"
-        android:repeatMode="restart"
-        android:valueFrom="#ffffff"
-        android:valueTo="#ff0000" />
+        android:repeatMode="reverse"
+        android:valueFrom="#00ff00"
+        android:valueTo="#ff00ff" />
 </set>
 
     <!--android:interpolator="@android:interpolator/anticipate_overshoot"-->
