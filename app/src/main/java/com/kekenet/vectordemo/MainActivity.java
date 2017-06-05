@@ -1,6 +1,5 @@
 package com.kekenet.vectordemo;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
@@ -57,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
         wordDel2Add = AnimatedVectorDrawableCompat.create(this, R.drawable.animation_word_del2add);
 
 
-
-
         //默认显示搜索按钮
         mSearch.setImageDrawable(bar2Search);
         bar2Search.start();
@@ -81,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
                 mText.setVisibility(View.VISIBLE);
                 mText.setFocusable(true);
                 mText.requestFocus();
-                showSoftKeyBoard(this);
+
+                //输入框显示的时候自动弹出输入法
+//                showSoftKeyBoard();
                 break;
             case R.id.root_view:
                 if (bar2Search.equals(mSearch.getDrawable())) return;
@@ -89,7 +88,9 @@ public class MainActivity extends AppCompatActivity {
                 bar2Search.start();
                 mText.clearFocus();
                 mText.setVisibility(View.GONE);
-                hideSoftKeyboard();
+
+                //自动隐藏输入法
+//                hideSoftKeyboard();
                 break;
             case R.id.image_view2:
                 if (wordAdd2Del.equals(mImageView2.getDrawable())) {
@@ -113,10 +114,10 @@ public class MainActivity extends AppCompatActivity {
                 focusView.getWindowToken(), 0);
     }
 
-    public static void showSoftKeyBoard(Activity act) {
+    public void showSoftKeyBoard() {
         try {
-            InputMethodManager imm = (InputMethodManager) act.getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.showSoftInput(act.getCurrentFocus(), InputMethodManager.SHOW_IMPLICIT);
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(getCurrentFocus(), InputMethodManager.SHOW_IMPLICIT);
         } catch (Exception e) {
             e.printStackTrace();
         }
