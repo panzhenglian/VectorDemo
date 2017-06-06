@@ -4,6 +4,6 @@
     android:propertyName="trimPathEnd"
     android:repeatCount="infinite"
     android:repeatMode="reverse"
-    android:valueFrom="0.4"
+    android:valueFrom="0.1"
     android:valueTo="1" />
     <!--android:interpolator="@android:interpolator/anticipate_overshoot"-->
